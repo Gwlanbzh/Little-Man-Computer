@@ -9,4 +9,4 @@ Run the program with `lmc [script]`.
 
 ## Script
 
-The programthat you want to run must be assembled. The instructions set is the same as described here: https://peterhigginson.co.uk/lmc/help.html . I recommand to use this page to know ho to make the script.
+The program that you want to run must be assembled. The instructions set is the same as described here: https://peterhigginson.co.uk/lmc/help.html . I recommand to use this page to know ho to make the script.
