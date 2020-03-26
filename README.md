@@ -3,6 +3,10 @@
 As the name suggests, it is a Little man computer, written in C. If you don't know what is a Little man computer,
 or if you want more informations, see https://en.wikipedia.org/wiki/Little_man_computer .
 
+## Installation
+
+You can either type `chmod 755 INSTALL.sh`, then run it, or copy/paste the command inside.
+
 ## Run
 
 Run the program with `lmc [script]`.
