@@ -147,12 +147,12 @@ void INPOUT(){
 	If the argument is '02', Copy the value from the accumulator to the "out box". Note: the contents of the accumulator are not changed.*/
 	switch(ADD){
 		case 1:
-            printf("INP\n");
+            printf("INBOX :\n");
 			scanf("%3s", input_temp);
 			ACC = atoi(input_temp);
 			break;
 		case 2:
-            printf("OUT\n");
+            printf("OUTBOX:\n");
 			printf("%3d\n", ACC);
 			break;
 		default:
