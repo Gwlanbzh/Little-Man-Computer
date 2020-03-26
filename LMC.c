@@ -31,8 +31,8 @@ void INPOUT();
 int main(int argc, char * argv[]){
     switch (argc) {
         case 1:
-            fprintf(stderr, "Error: please enter a file to work on.\n");
-            exit(5);
+            printf("Little Man Computer - A CPU simulator\n");
+            exit(0);
         case 2:
             break;    
         default:
