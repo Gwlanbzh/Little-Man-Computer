@@ -77,7 +77,7 @@ int main(int argc, char * argv[]){
         temp = RAM[PC];
         INS = (int) temp / 100;
         ADD = (int) temp % 100;
-	    instruction[INS]();
+	instruction[INS]();
         PC++;
     }
 }
