@@ -84,79 +84,88 @@ int main(int argc, char * argv[]){
 
 
 void HLT(){
-	/*Stops the LMC simulator executing the program.*/
+    /*Stops the LMC simulator executing the program.*/
     printf("HLT\n");
-	exit(EXIT_SUCCESS);
+    exit(EXIT_SUCCESS);
+    return;
 }
 
 void ADD_ins(){
-	/*Adds the contents of address xx to the accumulator.*/
+    /*Adds the contents of address xx to the accumulator.*/
     printf("ADD\n");
-	ACC = ACC + RAM[ADD];
+    ACC = ACC + RAM[ADD];
+    return;
 }
 
 void SUB(){
-	/*Subtracts the contents address xx from the accumulator.*/
+    /*Subtracts the contents address xx from the accumulator.*/
     printf("SUB\n");
-	ACC = ACC - RAM[ADD];
+    ACC = ACC - RAM[ADD];
+    return;
 }
 
 void STA(){
-	/*Stores the contents of the accumulator to address xx.*/
+    /*Stores the contents of the accumulator to address xx.*/
     printf("STA\n");
-	RAM[ADD] = ACC;
+    RAM[ADD] = ACC;
     return;
 }
 
 void ERR(){
-	/*The 4 is not used as an instruction in the LMC. Exits.*/
+    /*The 4 is not used as an instruction in the LMC. Exits.*/
     printf("ERR\n");
-	exit(IO_ERROR);
+    exit(IO_ERROR);
+    return;
 }
 
 void LDA(){
-	/*Loads the contents of address xx onto the accumulator.*/
+    /*Loads the contents of address xx onto the accumulator.*/
     printf("LDA\n");
-	ACC = RAM[ADD];
+    ACC = RAM[ADD];
+    return;
 }
 
 void BRA(){
-	/*Set the program counter to address xx.*/
+    /*Set the program counter to address xx.*/
     printf("BRA\n");
-	PC = ADD;
+    PC = ADD;
+    return;
 }
 
 void BRZ(){
-	/*If the contents of the accumulator are ZERO, set the program counter to address xx.*/
+    /*If the contents of the accumulator are ZERO, set the program counter to address xx.*/
     printf("BRZ\n");
-	if(ACC == 0){
-		PC = ADD;
-	}
+    if(ACC == 0){
+        PC = ADD;
+    }
+    return;
 }
 
 void BRP(){
-	/*If the contents of the accumulator are ZERO or positive (i.e. the negative flag is not set), sets the program counter to address xx.*/
+    /*If the contents of the accumulator are ZERO or positive (i.e. the negative flag is not set), sets the program counter to address xx.*/
     printf("BRP\n");
-	if(ACC >= 0){
-		PC = ADD;
-	}
+    if(ACC >= 0){
+        PC = ADD;
+    }
+    return;
 }
 
 void INPOUT(){
-	/*If the argument is '01', copies the value from the "in box" onto the accumulator.
-	If the argument is '02', Copy the value from the accumulator to the "out box". Note: the contents of the accumulator are not changed.*/
-	switch(ADD){
-		case 1:
+    /*If the argument is '01', copies the value from the "in box" onto the accumulator.
+    If the argument is '02', Copy the value from the accumulator to the "out box". Note: the contents of the accumulator are not changed.*/
+    switch(ADD){
+        case 1:
             printf("INBOX :\n");
-			scanf("%3s", input_temp);
-			ACC = atoi(input_temp);
-			break;
-		case 2:
+            scanf("%3s", input_temp);
+            ACC = atoi(input_temp);
+            break;
+        case 2:
             printf("OUTBOX:\n");
-			printf("%3d\n", ACC);
-			break;
-		default:
-			fprintf(stderr, "Error: on instruction %d: instruction '9' can only be used with arguments '01' and '02'", PC);
-			exit(IO_ERROR);
-	}
+            printf("%3d\n", ACC);
+            break;
+        default:
+            fprintf(stderr, "Error: on instruction %d: instruction '9' can only be used with arguments '01' and '02'", PC);
+            exit(IO_ERROR);
+    }
+    return;
 }
